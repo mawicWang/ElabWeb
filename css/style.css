@@ -949,8 +949,8 @@ body {
 }
 .close-bar{
 	width: 100%;
-	height: 50px;
-	line-height: 50px;
+	height: 40px;
+	line-height: 40px;
 	background: url(../images/join/1_objects@2x_3.png) no-repeat 50% 50%;
 	background-size: contain;
 	cursor: pointer;
@@ -3306,5 +3306,8 @@ body {
     }
     .project-qrcode p{
     	display: none;
+    }
+    #parts9 .inner-item .small-line{
+    	height: 1px;
     }
 }

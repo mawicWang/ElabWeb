@@ -61,8 +61,8 @@ body {
 }
 .close-bar{
 	width: 100%;
-	height: 50px;
-	line-height: 50px;
+	height: 40px;
+	line-height: 40px;
 	background: url(../images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
 	background-size: contain;
 	cursor: pointer;
@@ -653,7 +653,7 @@ body {
 .shuzi strong {
 	font-size: 250px;
 	color: #fff;
-	font-family: "AritaHeiti";
+	font-family: "DINCond";
 }
 
 .sp1 {
@@ -1047,9 +1047,9 @@ body {
 		left: .71rem;
 	}
 	.h33 {
-		font-size: .36rem;
+		font-size: 5vw;
 		top: 0.2rem;
-		right: 0.56rem;
+		right: 1%;
 	}
 	.work {
 		top: 0.96rem;
@@ -1334,4 +1334,46 @@ body {
 	height: 100%;
 	overflow: hidden;
 	position: relative;
+}
+
+@media only screen and (max-width: 576px) and (-webkit-min-device-pixel-ratio:2) {
+	.menu-close {
+		margin-left: 5%;
+	}
+	.menu-list li {
+		width: 95%;
+		padding-left: 5%;
+		text-align: left;
+		margin-bottom: 5%;
+		font-size: 7vw;
+	}
+	.logo {
+		width: 18%;
+		position: absolute;
+		left: 42.5%;
+		cursor: pointer;
+	}
+	.menu {
+		width: 13.4%;
+		position: absolute;
+		top: 35%;
+		left: 3%;
+		cursor: pointer;
+	}
+	.cases {
+		width: 13.4%;
+	}
+	.shuzi p{
+		margin-bottom: 7%;
+	}
+	.shuzi strong {
+        font-size: 1.5rem;
+        position: relative;
+    }
+    .shuzi strong sup{
+    	font-size: 1rem;
+    	position: absolute;
+    	right: -21%;
+    	top: -19%;
+    }
 }

@@ -1,5 +1,3 @@
-
-
 function showSubnav() {
 	$(this).addClass('open');
 	$('.m-sub-menu').addClass('left1');

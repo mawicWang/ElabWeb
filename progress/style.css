@@ -42,6 +42,7 @@ html {
 	font-family: sans-serif;
 	font-size: 150px;
 	color:#24293a;
+	margin-bottom: 0;
 }
 .hidden{
 	visibility: hidden;
@@ -49,14 +50,11 @@ html {
 .logo{
 	width:69px;
 	height: 77px;
+	margin-top: -12vh;
+	margin-bottom: 12vh;
 	opacity: 0;
 	-webkit-animation: fadeIn 1s linear 0s forwards, flash 3s linear 1s infinite;
 	animation: fadeIn 1s linear 0s forwards, flash 3s linear 1s infinite;
-	position: absolute;
-	left: 100px;
-	top: 100px;
-	bottom: 100px;
-	right: 100px;
 }
 .sample-pb {
 	width: 60%;

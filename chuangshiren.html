@@ -1,158 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-	<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="description" content="">
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
-	<script src="js/jquery-1.11.3.min.js"></script>
-	<script src="js/rem.js"></script>
-	<script src="js/swiper-3.4.2.min.js"></script>
-	<link rel="stylesheet" href="css/animate.min.css"></link>
-	<style type="text/css">
-		body,.container{
-			background: #000004;
-		}
-	</style>
-	<script>
-		window['adaptive'].desinWidth = 750;
-		window['adaptive'].init();
-	</script>
-</head>
-<body>
-	
-	<div class="close-bar"></div>
-	<div class="container">
-		
-		<div class="con_t">
-			<img src="	http://yun-image.elab-plus.com/images/1-1.png" alt="" class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
-			<div class="left">
-				<h3 class="cai wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">蔡雪梅</h3>
-				<span class="line wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s"></span>
-				<p class="p_p wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">曾任世茂集团集团副总裁兼营销总经理，北京龙湖营销营销副总，龙湖集团营销中心副总，龙湖集团产品体验中心总监</p>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="description" content="">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/index.css?v=0.0006247">
+		<link rel="stylesheet" href="css/animate.min.css"></link>
+		<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/rem.js"></script>
+		<script>
+			window['adaptive'].desinWidth = 750;
+			window['adaptive'].init();
+		</script>
+		<style type="text/css">
+			body,
+			.container {
+				background: #000004;
+			}
+			
+			.con_t {
+				width: 100%;
+			}
+			
+			.swiperBox {
+				width: 100%;
+				height: 900px;
+				position: relative;
+				overflow: hidden;
+				z-index: 1;
+			}
+			
+			.swiper {
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 100%;
+			}
+			
+			.swiper-container-horizontal>.swiper-pagination-bullets,
+			.swiper-pagination-custom,
+			.swiper-pagination-fraction {
+				position: absolute;
+				z-index: 20;
+			}
+			
+			@media only screen and (max-width: 1024px) {
+				.swiperBox {
+					height: 484px;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="close-bar"></div>
+			<div class="con_t">
+				<img src="	http://yun-image.elab-plus.com/images/1-1.png" alt="" class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
+				<div class="left">
+					<h3 class="cai wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">蔡雪梅</h3>
+					<span class="line wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s"></span>
+					<p class="p_p wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">曾任世茂集团集团副总裁兼营销总经理，北京龙湖营销营销副总，龙湖集团营销中心副总，龙湖集团产品体验中心总监</p>
+				</div>
+				<div class="right">
+					<h3 class="h33 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">ELAB创始人兼CEO</h3>
+					<div class="work wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+						<h3>WORK EXPERIENCE</h3>
+						<P>曾将世茂公司业绩从280亿到达710亿；</P>
+						<p>从全国排名13位提升至第8位。</p>
+					</div>
+					<h3 class="n wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Cher Cai</h3>
+					<div class="gx wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+						<P>曾带领龙湖地产从30亿到330亿</P>
+						<p>从3个城市到13个城市，</p>
+						<p>从地方民营企业到香港上市公司的全过程。</p>
+					</div>
+					<div class="w wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+						<P>在担任龙湖集团产品体验中心总监期间，</P>
+						<p>深耕各业态高端产品系。</p>
+					</div>
+				</div>
 			</div>
-			<div class="right">
-				<h3 class="h33 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">ELAB创始人兼CEO</h3>
-				<div class="work wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-					<h3>WORK EXPERIENCE</h3>
-					<P>曾将世茂公司业绩从280亿到达710亿；</P>
-					<p>从全国排名13位提升至第8位。</p>
-				</div>
-				<h3 class="n wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">Cher Cai</h3>
-				<div class="gx wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-					<P>曾带领龙湖地产从30亿到330亿</P>
-					<p>从3个城市到13个城市，</p>
-					<p>从地方民营企业到香港上市公司的全过程。</p>
-				</div>
-				<div class="w wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-					<P>在担任龙湖集团产品体验中心总监期间，</P>
-					<p>深耕各业态高端产品系。</p>
-				</div>
-			</div>
-		</div>
-		<div class="sb" style="background: url(images/Group@2x.png) center no-repeat;background-size: cover;">
-						<div class="shuzi">
-							<p>
-								<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"> <strong>20</strong> 年</span>
-								<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+			<div class="sb" style="background: url(http://yun-image.elab-plus.com/images/Group@2x.png) center no-repeat;background-size: cover;">
+				<div class="shuzi">
+					<p>
+						<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"> <strong>20</strong> 年</span>
+						<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
 									<strong>60</strong>城
 								</span>
-							</p>
-							<p>
-								<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="1.5s">
+					</p>
+					<p>
+						<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="1.5s">
 									<strong>130<sup>+</sup></strong>项目
 								</span>
-							</p>
-							<p>
-								<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="2s">
+					</p>
+					<p>
+						<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="2s">
 									<strong>2200</strong>亿销售额
 								</span>
-							</p>
-						</div>
-					</div>
-		<!--<div class="swiper">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<div class="sb" style="background: url(images/Group@2x.png) center no-repeat;background-size: cover;">
-						<div class="shuzi">
-							<p>
-								<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s"> <strong>20</strong> 年</span>
-								<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
-									<strong>60</strong>城
-								</span>
-							</p>
-							<p>
-								<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="1.5s">
-									<strong>130+</strong>项目
-								</span>
-							</p>
-							<p>
-								<span class="sp1 wow fadeIn" data-wow-duration="1s" data-wow-delay="2s">
-									<strong>2200</strong>亿销售额
-								</span>
-							</p>
-						</div>
-					</div>
+					</p>
 				</div>
 			</div>
-			<div class="span"></div>
-		</div>-->
-		<div class="swiper">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<div class="swiper-box wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-						<div class="s_inner">
-							<h3>“可不可以,<span></span>开启一段旅程，<span></span>无关其他，<span></span>只为热爱?”</h3>
-							<p class="sm">--蔡雪梅</p>
-							<p class="sub">
-								2015年，蔡雪梅深刻感知到地产行业的内忧外患，同时看到了地产外技术赋能下的新的商业环境，在传统地产公司无法大刀阔斧改革的情况下，毅然结束了 20
-								年的房地产高级职业经理人生涯，在上海创办了以技术和数据驱动的新型房地产开发互联网平台型公司，ELAB。
-							</p>
+			<div class="swiperBox">
+				<div class="swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="swiper-box">
+								<div class="s_inner">
+									<h3>“可不可以，开启一段旅程，无关其他，只为热爱?”</h3>
+									<p class="sm">--蔡雪梅</p>
+									<p class="sub">
+										2015年，蔡雪梅深刻感知到地产行业的内忧外患，同时看到了地产外技术赋能下的新的商业环境，在传统地产公司无法大刀阔斧改革的情况下，毅然结束了 20 年的房地产高级职业经理人生涯，在上海创办了以技术和数据驱动的新型房地产开发互联网平台型公司，ELAB。
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="swiper-box">
+								<div class="s_inner">
+									<h3>“探索必不可少”</h3>
+									<p class="sm">--蔡雪梅</p>
+									<p class="sub">
+										现在，蔡雪梅正和她的团队，持续推动创新，通过技术，数据，产品赋能，改变传统开发模式，实现以客户需求为核心的未来人居创新产品预制开发，努力 让ELAB成为客户价值和客户利益的创造者，研究未来最领先的生活方式和美好体验，并从源头解决开发商痛点，推动行业可持续发展。
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="swiper-box wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-						<div class="s_inner">
-							<h3>“探索必不可少”</h3>
-							<p class="sm">--蔡雪梅</p>
-							<p class="sub">
-								现在，蔡雪梅正和她的团队，持续推动创新，通过技术，数据，产品赋能，改变传统开发模式，实现以客户需求为核心的未来人居创新产品预制开发，努力
-								让ELAB成为客户价值和客户利益的创造者，研究未来最领先的生活方式和美好体验，并从源头解决开发商痛点，推动行业可持续发展。
-							</p>
-						</div>
-					</div>
+					<div class="span"></div>
 				</div>
 			</div>
-			<div class="span"></div>
+
 		</div>
-	</div>
-	
-</body>
-<script src="js/index.js"></script>
-<script src="js/wow.js"></script>
-<script>
-	var swiper=new Swiper('.swiper',{
-		pagination:'.span',
-		paginationClickable:true,
-		autoplay: 3000,
-		speed: 800,
-		loop: true
-	});
-	
-	$(function(){
-		
-		$('.close-bar').on('click', function(e) {
-			    $("html,body").fadeOut(500);
-			    setTimeout(function(){
-			    	self.location.href='licheng.html';
-			    },500);
+
+	</body>
+	<!--<script src="http://yun-image.elab-plus.com/js/index.js"></script>-->
+	<script src="js/wow.js"></script>
+	<script src="js/swiper-3.4.2.min.js"></script>
+	<script>
+		$(function() {
+
+			var $_w = $(top).width();
+			$(".swiper").width($_w + "px");
+
+			var swiper = new Swiper('.swiper', {
+				pagination: '.span',
+				paginationClickable: false,
+				autoplay: 3000,
+				speed: 800,
+				loop: true
 			});
-		
-		//start wow
+
+			$('.close-bar').on('click', function(e) {
+				$("html,body").fadeOut(500);
+				parent.closeChuang();
+			});
+
+		});
+
+		function startWow() {
+			//start wow
 			var wow = new WOW({
 				boxClass: 'wow',
 				animateClass: 'animated',
@@ -161,8 +173,7 @@
 				live: true
 			});
 			wow.init();
-		
-	});
-	
-</script>
+		}
+	</script>
+
 </html>

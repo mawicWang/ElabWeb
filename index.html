@@ -15,6 +15,7 @@
 			.page {
 				opacity: 0;
 			}
+			
 			.top-menu {
 				background: none;
 			}
@@ -67,29 +68,7 @@
 			<!--main-->
 			<div class="index-body wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
 				<div class="slider">
-					<ul>
-						<!--<li>
-							<img class="slider-img animation" src="http://yun-image.elab-plus.com/images/index/1_objects@2x_7.png" />
-							<div class="slider-title">主图1</div>
-							<div class="link-box">
-								<a href="javascript:showSliderLink('projects-1-1.html');" class="slider-links wow fadeIn" data-wow-duration="1s" data-wow-delay="5.2s">浏览作品</a>
-							</div>
-						</li>
-						<li>
-							<img class="slider-img animation" src="http://yun-image.elab-plus.com/images/index/1_objects@2x_8.png" />
-							<div class="slider-title" style="color: #000;">未来人居实验室</div>
-							<div class="link-box">
-								<a href="javascript:showSliderLink('');" class="slider-links wow fadeIn" data-wow-duration="1s" data-wow-delay="5.2s">浏览作品</a>
-							</div>
-						</li>
-						<li>
-							<img class="slider-img animation" src="http://yun-image.elab-plus.com/images/index/1_objects@2x_9.png" />
-							<div class="slider-title">elab.东宫</div>
-							<div class="link-box">
-								<a href="javascript:showSliderLink('');" class="slider-links wow fadeIn" data-wow-duration="1s" data-wow-delay="5.2s">浏览作品</a>
-							</div>
-						</li>-->
-					</ul>
+					<ul></ul>
 				</div>
 				<div class="small-slider">
 					<img class="slider-img wow fadeIn" data-wow-duration="2s" data-wow-delay="1s" src="http://yun-image.elab-plus.com/images/index/1_objects@2x.png" />
@@ -135,14 +114,14 @@
 
 		<!--who we are-->
 		<div class="whoWeAre pageLayer" hidden>
-			<div class="black-mask" ></div>
-			<iframe name="frameWho" src="licheng.html" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>
+			<div class="black-mask"></div>
+			<iframe name="frameWho" src="licheng.html?v=1.54325432545" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>
 		</div>
 		<!--/who we are-->
 
 		<!--what we do-->
 		<div class="whatWeDo pageLayer" hidden>
-			<div class="black-mask" ></div>
+			<div class="black-mask"></div>
 			<iframe name="frameDo" src="do.html" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>
 		</div>
 		<!--/what we do-->
@@ -161,7 +140,7 @@
 
 		<!--what we do-->
 		<div class="projectsLayer pageLayer">
-			<iframe name="frameProjects" src="projects.html" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>
+			<iframe name="frameProjects" src="projects.html?v=1.4324214" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>
 		</div>
 		<!--/what we do-->
 
@@ -177,52 +156,69 @@
 		</div>
 		<!--/project detail-->
 
+		<!--project detail-->
+		<div class="chuangLayer pageLayer">
+			<iframe name="frameChuang" id="frameChuang" src="chuangshiren.html?v=1.0000" width="100%" height="100%" scrolling="yes" frameborder="0"></iframe>
+		</div>
+		<!--/project detail-->
+
 		<script src="js/jquery-1.11.3.min.js"></script>
 		<script src="js/unslider-min.js"></script>
 		<script src="js/jquery.event.move.js"></script>
 		<script src="js/jquery.event.swipe.js"></script>
 		<script src="js/wow.js"></script>
+		<!--<script src="js/debug.js"></script>-->
 
 		<script>
 			//绑定前进后退事件
 			var $_cpage = "index";
 			// 隐藏地址栏
-//            if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
-//                bodyTag = document.getElementsByTagName('body')[0];
-//                bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px';
-//            }
-//            window.onload=function(){
-//                setTimeout(function() {
-//                    window.scrollTo(0, 1)
-//                }, 0);
-//            };
+			//            if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) {
+			//                bodyTag = document.getElementsByTagName('body')[0];
+			//                bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px';
+			//            }
+			//            window.onload=function(){
+			//                setTimeout(function() {
+			//                    window.scrollTo(0, 1)
+			//                }, 0);
+			//            };
 
-            //当前页面
+			//当前页面
 			window.onpopstate = function(event) {
 				var $_state = event.state;
+				console.log("the state is: ");
+				console.log($_state);
+				if(!$_state) {
+					return false;
+				}
 				var $_url = window.location.href;
 				var $_mark = $_url.split("#")[1] || "";
-                console.log($_mark);
-				//先回退到首页,再执行显示某个页面
-				showIndex();
-				
-				if($_mark != "") {
-					if($_state.page == "who") {
-						showWho();
+				console.log($_mark);
+
+				//if($_state.page == 'who' && $_cpage == 'chuang') { //创始人页回退直接显示who
+
+				//} else {
+					//先回退到首页,再执行显示某个页面
+					showIndex();
+
+					if($_mark != "") {
+						if($_state.page == "who") {
+							showWho();
+						}
+						if($_state.page == "do") {
+							showDo();
+						}
+						if($_state.page == "projects" || $_state.page == "list") {
+							showProjects();
+						}
+						if($_state.page == "careers") {
+							showCareers();
+						}
+						if($_state.page == "contact") {
+							showContact();
+						}
 					}
-					if($_state.page == "do") {
-						showDo();
-					}
-					if($_state.page == "projects" || $_state.page == "list") {
-						showProjects();
-					}
-					if($_state.page == "careers") {
-						showCareers();
-					}
-					if($_state.page == "contact") {
-						showContact();
-					}
-				}
+				//}
 
 			};
 
@@ -234,58 +230,57 @@
 					page: 'index'
 				}, "index", "index.html");
 
-				/*var mySlider = $('.slider').unslider({
-					infinite: true,
-					nav: false,
-					arrows: false,
-					fluid: false,
-					autoplay: true,
-					delay: 10000,
-					speed: 800
-					//index: s //初始化显示哪个礼品的索引
-				});*/
+				//footer for mobile
+				var $_w = $('html body').width();
+				console.log("the w is:" + $_w);
+				if($_w <= 768) {
+					$(".footer").removeClass("fadeIn").addClass("fadeInLeft");
+				}
 
 				//大图数据加载
 				var percent, Count, Imgs;
 				var ImgLoaded = 0;
 				var spriteImagesSrc = [];
 
-				$.get("http://106.14.225.13:8081/rest/listBanner", function(result) {
+				var $_vw = $(window).width();
+				if($_vw >= 768) {
+					$.get("http://106.14.225.13:8081/rest/listBanner", function(result) {
 
-					var $_list = result.result.list;
-					if($_list.length > 0) { //有返回数据列表
-						$(".slider ul").empty();
+						var $_list = result.result.list;
+						if($_list.length > 0) { //有返回数据列表
+							$(".slider ul").empty();
 
-						var host = "http://106.14.225.13:8081";
+							var host = "http://106.14.225.13:8081";
 
-						for(var i = 0; i < $_list.length; i++) { //生成unslide数据
-							var img = $_list[i];
-							spriteImagesSrc.push(host + img['image']);
-							var $_html = `<li>
+							for(var i = 0; i < $_list.length; i++) { //生成unslide数据
+								var img = $_list[i];
+								spriteImagesSrc.push(host + img['image']);
+								var $_html = `<li>
 							<img class="slider-img animation" src="${host+img['image']}" />
 							<div class="slider-title">${img['name']}</div>
 							<div class="link-box">
 								<a href="javascript:showSliderLink('${img['url']}');" class="slider-links wow fadeIn" data-wow-duration="1s" data-wow-delay="4s">浏览作品</a>
 							</div>
 						    </li>`;
-							$(".slider ul").append($_html);
-						}
+								$(".slider ul").append($_html);
+							}
 
-						//Count = spriteImagesSrc.length; //图片数量 
-						//Imgs = new Array(Count);
-						//preLoadImgs();
-						//列表加载完毕，开始slider
-						var mySlider = $('.slider').unslider({
-							infinite: true,
-							nav: false,
-							arrows: false,
-							autoplay: true,
-							delay: 3000,
-							speed: 800
-							//index: s //初始化显示哪个礼品的索引
-						});
-					}
-				});
+							//Count = spriteImagesSrc.length; //图片数量 
+							//Imgs = new Array(Count);
+							//preLoadImgs();
+							//列表加载完毕，开始slider
+							var mySlider = $('.slider').unslider({
+								infinite: true,
+								nav: false,
+								arrows: false,
+								autoplay: true,
+								delay: 3000,
+								speed: 800
+								//index: s //初始化显示哪个礼品的索引
+							});
+						}
+					});
+				}
 
 				//预加载图片 
 				function preLoadImgs() {
@@ -359,13 +354,13 @@
 				$(".what-we-do").on('mouseover', function(e) {
 					$(".footer .right,#rightWave").addClass("active");
 					$(".what-we-do .slide-line,.what-we-do .slide-line1").addClass("active");
-					$("#menuLayer .cases img").attr("src", "images/index/1_objects@2x_5.png");
+					$("#menuLayer .cases img").attr("src", "http://yun-image.elab-plus.com/images/index/1_objects@2x_5.png");
 				});
 				$(".what-we-do").on('mouseout', function(e) {
 					//setTimeout(function(){
 					$(".footer .right,#rightWave").removeClass("active");
 					$(".what-we-do .slide-line,.what-we-do .slide-line1").removeClass("active").addClass("fadeInUp");
-					$("#menuLayer .cases img").attr("src", "images/index/1_objects@2x_4.png");
+					$("#menuLayer .cases img").attr("src", "http://yun-image.elab-plus.com/images/index/1_objects@2x_4.png");
 					//},600);
 				});
 
@@ -379,13 +374,13 @@
 
 			});
 
-			window.onload = function() {
+			/*window.onload = function() {
 				var $_w = $('html body').width();
 				console.log("the w is:" + $_w);
 				if($_w <= 768) {
 					$(".footer").removeClass("fadeIn").addClass("fadeInLeft");
 				}
-			}
+			}*/
 
 			//loading completed
 			function hideLoading() {
@@ -415,12 +410,12 @@
 						$(this).fadeOut();
 					}
 				});
-                $(".whoWeAre").hide();
-                $(".whatWeDo").hide();
+				$(".whoWeAre").hide();
+				$(".whatWeDo").hide();
 			}
 			//show who
 			function showWho() {
-                $(".whoWeAre").show();
+				$(".whoWeAre").show();
 				$(".whoWeAre").addClass("in");
 				frameWho.window.startWow();
 				$(".main-menu").removeClass("active");
@@ -437,7 +432,7 @@
 
 			//show do
 			function showDo(istrue) {
-                $(".whatWeDo").show();
+				$(".whatWeDo").show();
 				$(".whatWeDo").addClass("in");
 				frameDo.window.startWow();
 				$(".main-menu").removeClass("active");
@@ -515,11 +510,11 @@
 					showCareers();
 				}, 500);
 			}
-			
+
 			//show list-1
-			function showList(id){
-				
-				$('#frameList').attr("src","projects-1.html?parent="+id+"");
+			function showList(id) {
+
+				$('#frameList').attr("src", "projects-1.html?parent=" + id + "");
 				$(".listLayer").addClass("in");
 				//frameList.window.startWow();
 				$(".main-menu").removeClass("active");
@@ -533,11 +528,13 @@
 			function closeList() {
 				$(".listLayer").removeClass("in");
 			}
-			
+
 			//show list-1
-			function showDetail(src){
-				if(!src || src=="" || src=="#"){return false;}
-				$('#frameDetail').attr("src","."+src+"");
+			function showDetail(src) {
+				if(!src || src == "" || src == "#") {
+					return false;
+				}
+				$('#frameDetail').attr("src", "." + src + "");
 				$(".detailLayer").addClass("in");
 				$(".main-menu").removeClass("active");
 				//存入history数据，并设置当前页面
@@ -545,19 +542,21 @@
 					page: 'detail'
 				}, "detailLayer", "#detail");
 				$_cpage = "detail";
-				
+
 			}
 			//close list
 			function closeDetail() {
 				$(".detailLayer").removeClass("in");
 			}
-			
+
 			//showSliderLink
-			function showSliderLink(url){
-				
-				if(!url || url=="" || url=="#"){return false;}
-				
-				$('#frameDetail').attr("src","./"+url+"");
+			function showSliderLink(url) {
+
+				if(!url || url == "" || url == "#") {
+					return false;
+				}
+
+				$('#frameDetail').attr("src", "./" + url + "");
 				$(".detailLayer").addClass("in");
 				$(".main-menu").removeClass("active");
 				//存入history数据，并设置当前页面
@@ -566,8 +565,22 @@
 				}, "detailLayer", "#detail");
 				$_cpage = "detail";
 			}
-			
-			
+
+			//show do
+			function showChuang() {
+				$(".chuangLayer").addClass("in");
+				frameChuang.window.startWow();
+				$(".main-menu").removeClass("active");
+				//存入history数据，并设置当前页面
+				history.pushState({
+					page: 'chuang'
+				}, "chuang shiren ", "#chuang");
+				$_cpage = "chuang";
+			}
+			//close what we do
+			function closeChuang() {
+				$(".chuangLayer").removeClass("in");
+			}
 		</script>
 
 	</body>

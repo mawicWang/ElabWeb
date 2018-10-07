@@ -4,36 +4,30 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="description" content="">
 		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/index.css?v=1.0001">
+		<link rel="stylesheet" href="css/index.css?v=1.0734757">
 		<link rel="stylesheet" href="css/animate.min.css"></link>
-		<link rel="stylesheet" href="css/unslider.css"></link>
+		<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
 		<script src="js/jquery-1.11.3.min.js"></script>
-		<!--<script src="js/jquery.SuperSlide.2.1.1.js"></script>-->
 		<script src="js/rem.js"></script>
+		<script src="js/swiper-3.4.2.min.js"></script>
 		<script>
 			window['adaptive'].desinWidth = 750;
 			window['adaptive'].init();
 		</script>
 		<style type="text/css">
-			.hideTimeLine{
+			body {
+				background: #1e2538;
+				height: auto;
+			}
+			
+			.hideTimeLine {
 				width: 100%;
 				display: none;
 			}
-
-			.hj_box {
-				position: relative;
-			}
-
-			.unslider {
-				position: absolute;
-				left: 0;
-				top: 0;
-				z-index: 20;
-			}
-
+			
 			.hj_box h3 {
 				position: absolute;
 				left: 0;
@@ -42,60 +36,119 @@
 				width: 100%;
 				text-align: center;
 			}
-
-            .hj_box .more1 {
-                position: absolute;
-                z-index: 30;
-                left: calc(50% - 190px);
-                top: 70%;
-            }
-
-            .hj_box .more2 {
-                position: absolute;
-                z-index: 30;
-                left: calc(50% + 30px);
-                top: 70%;
-            }
-            @media(max-width:1024px) {
-                .hj_box .more1 {
-                    position: absolute;
-                    z-index: 30;
-                    left: calc(50% - 2.5rem);
-                    top: 70%;
-                }
-
-                .hj_box .more2 {
-                    position: absolute;
-                    z-index: 30;
-                    left: calc(50% + 0.3rem);
-                    top: 70%;
-                }
-            }
-			body {
-				background: #1e2538;
+			
+			.hj_box .more1 {
+				position: absolute;
+				z-index: 30;
+				left: calc(50% - 190px);
+				top: 70%;
 			}
-
+			
+			.hj_box .more2 {
+				position: absolute;
+				z-index: 30;
+				left: calc(50% + 30px);
+				top: 70%;
+			}
+			
 			.section4_list {
 				width: 100%;
 				max-width: 1440px;
 				margin: 0 auto;
 			}
-
+			
+			.section4_list li .section4_list_box {
+				/*transition: all ease 0.5s;
+				padding-top: 20px;
+				cursor: pointer;*/
+			}
+			
+			.section4_list li:hover .section4_list_box {
+				/*transform: translateY(-10px);*/
+			}
+			
+			.first-rc {
+				padding-left: 2.2%;
+				padding-bottom: 3px;
+			}
+			
+			.section5 {
+				padding: 0;
+				position: relative;
+				height: 900px;
+				padding: 30px 0;
+			}
+			
+			.section5 .hj_box {
+				height: 100%;
+				background: none;
+				padding: 0;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.swiper {
+				padding-bottom: 0;
+				background: none;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			.section5 .a_btn {
+				width: 100%;
+				left: 0;
+				bottom: 20%;
+				z-index: 30;
+				margin-top: 0;
+			}
 			/***middle**/
 			@media only screen and (max-width: 1280px) {
 				.progress>p.p_fir1 span {
 					width: 358px;
 				}
 			}
-
-			.section4_list li .section4_list_box {
-				/*transition: all ease 0.5s;
-				padding-top: 20px;
-				cursor: pointer;*/
+			@media(max-width:1024px) {
+				.section5{
+					height: 650px;
+				}
+				.a_btn a{
+					width: 1.5rem;
+					font-size: 0.16rem;
+					height: 0.4rem;
+					line-height: 0.4rem;
+				}
+				.hj_box .more1 {
+					position: absolute;
+					z-index: 30;
+					left: calc(50% - 2rem);
+					top: 70%;
+				}
+				.hj_box .more2 {
+					position: absolute;
+					z-index: 30;
+					left: calc(50% + 0.5rem);
+					top: 70%;
+				}
+				.more{
+					height: 0.4rem;
+					font-size: 0.15rem;
+					line-height: 0.42rem;
+				}
 			}
-
-			.section4_list li:hover .section4_list_box {
-				/*transform: translateY(-10px);*/
+			@media(max-width:768px) {
+				.section5{
+					height: 500px;
+				}
+			}
+			@media only screen and (max-width: 576px) and (-webkit-min-device-pixel-ratio:2) {
+				.first-rc {
+					padding-left: 2.4%;
+					padding-bottom: 3px;
+				}
+				.section5{
+					height: 300px;
+				}
 			}
 		</style>
 	</head>
@@ -148,7 +201,7 @@
 					<p class="csr_text wow fadeInUp" data-wow-duration="1s" data-wow-delay="3s">2015年创业之初,创始人蔡雪梅TED演讲</p>
 					<div class="a_btn clearfix">
 						<a href="#" class="s_v wow fadeInRight" data-wow-duration="1s" data-wow-delay="3s">查看视频</a>
-						<a href="javascript:linkToInner('chuangshiren.html');" class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="3s">了解创始人</a>
+						<a href="javascript:parent.showChuang();" class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="3s">了解创始人</a>
 					</div>
 				</div>
 			</div>
@@ -181,7 +234,7 @@
 			<div id="section4" class="section4 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
 				<ul class="section4_list">
 					<li>
-						<div class="section4_list_box" style="padding-left: 33px;padding-bottom: 3px;">
+						<div class="section4_list_box first-rc">
 							<h3 class="h3 latest wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">20<br />18</h3>
 							<p class="p p1 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">NOW-B轮进行中</p>
 						</div>
@@ -258,14 +311,14 @@
 								<h3 class="h3 tag">09</h3>
 								<p class="p">与易居中国、城视窗联合举办北京国际设计周-全球未来人居创新大会，本次大会邀请了全球100位建筑师进行作品中国首秀。</p>
 							</div>
-                            <div class="section4_list_box">
-                                <div id="progressFirst" class="progress progressFirst">
-                                    <p class="p_fir p_fir1 wow p_border">
-                                        <img id="progressFirstImg" src="http://yun-image.elab-plus.com/images/Bitmap@2x9.png" alt="" class="wph">
-                                        <span id="progressFirstText" class="fl">唯品会信息科技有限公司（VIPS）成立于2008年8月，2012年在美国纽约证券交易所（NYSE）上市。目前已成为中国第三大电商。</span>
-                                    </p>
-                                </div>
-                            </div>
+							<div class="section4_list_box">
+								<div id="progressFirst" class="progress progressFirst">
+									<p class="p_fir p_fir1 wow p_border">
+										<img id="progressFirstImg" src="http://yun-image.elab-plus.com/images/Bitmap@2x9.png" alt="" class="wph">
+										<span id="progressFirstText" class="fl">唯品会信息科技有限公司（VIPS）成立于2008年8月，2012年在美国纽约证券交易所（NYSE）上市。目前已成为中国第三大电商。</span>
+									</p>
+								</div>
+							</div>
 						</li>
 
 						<li class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -282,14 +335,14 @@
 								<h3 class="h3 latest">20<br />15</h3>
 								<!--<p class="p p1 p1-1">NOW-B轮进行中</p>-->
 							</div>
-                            <div class="section4_list_box">
-                                <div id="progressSecond" class="progressSecond progress">
-                                    <p class="p_fir p_border">
-                                        <img id="progressSecondImg" src="http://yun-image.elab-plus.com/images/Bitmap@2x.png" alt="" class="shun">
-                                        <span id="progressSecondText" class="fl">顺为资本由雷军和许达来先生联合创立，重点关注互联网，高科技行业以及互联网与传统行业结合所带来的变革。已主导投资了超百家创业公司。</span>
-                                    </p>
-                                </div>
-                            </div>
+							<div class="section4_list_box">
+								<div id="progressSecond" class="progressSecond progress">
+									<p class="p_fir p_border">
+										<img id="progressSecondImg" src="http://yun-image.elab-plus.com/images/Bitmap@2x.png" alt="" class="shun">
+										<span id="progressSecondText" class="fl">顺为资本由雷军和许达来先生联合创立，重点关注互联网，高科技行业以及互联网与传统行业结合所带来的变革。已主导投资了超百家创业公司。</span>
+									</p>
+								</div>
+							</div>
 						</li>
 
 						<li class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -306,63 +359,64 @@
 							</div>
 						</li>
 					</ul>
-                    <div class="progress" id="progreeBtn" hidden>
-                        <!--<img src="http://yun-image.elab-plus.com/images/Line.png" alt="" class="Line wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">-->
-                        <p class="p_fir wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                            <img src="http://yun-image.elab-plus.com/images/Bitmap@2x.png" alt="" class="shun">
-                            <span class="fl">顺为资本由雷军和许达来先生联合创立，重点关注互联网，高科技行业以及互联网与传统行业结合所带来的变革。已主导投资了超百家创业公司。</span>
-                        </p>
-                        <p class="p_fir p_fir1 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s" style="">
-                            <img src="http://yun-image.elab-plus.com/images/Bitmap@2x9.png" alt="" class="wph">
-                            <span class="fl">唯品会信息科技有限公司（VIPS）成立于2008年8月，2012年在美国纽约证券交易所（NYSE）上市。目前已成为中国第三大电商。</span>
-                        </p>
-                    </div>
+					<div class="progress" id="progreeBtn" hidden>
+						<!--<img src="http://yun-image.elab-plus.com/images/Line.png" alt="" class="Line wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">-->
+						<p class="p_fir wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
+							<img src="http://yun-image.elab-plus.com/images/Bitmap@2x.png" alt="" class="shun">
+							<span class="fl">顺为资本由雷军和许达来先生联合创立，重点关注互联网，高科技行业以及互联网与传统行业结合所带来的变革。已主导投资了超百家创业公司。</span>
+						</p>
+						<p class="p_fir p_fir1 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s" style="">
+							<img src="http://yun-image.elab-plus.com/images/Bitmap@2x9.png" alt="" class="wph">
+							<span class="fl">唯品会信息科技有限公司（VIPS）成立于2008年8月，2012年在美国纽约证券交易所（NYSE）上市。目前已成为中国第三大电商。</span>
+						</p>
+					</div>
 				</div>
-                <p>&nbsp;</p>
+				<p>&nbsp;</p>
 				<a href="javascript:showTimeMore();" id='btnShowTimeMore' class="more wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">查看更多</a>
-			    <p>&nbsp;</p>
+				<p>&nbsp;</p>
 			</div>
 
 			<div class="section5">
 				<div class="wrap hj_box">
-                    <div class="a_btn clearfix">
-                        <a href="javascript:subShowJoin();" class="more1 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1s">加入我们</a>
-                        <a href="#" class="more2 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1s">查看视频</a>
-                    </div>
-					<div class="slider">
-						<ul>
-							<li><img src="images/slider/1.jpg" />
-								<h3 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"></h3></li>
-							<li><img src="images/slider/2.jpg" />
-								<h3 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"></h3></li>
-							<li><img src="images/slider/3.jpg" />
-								<h3 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"></h3></li>
-							<li><img src="images/slider/4.jpg" />
-								<h3 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"></h3></li>
-							<li><img src="images/slider/5.jpg" />
-								<h3 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"></h3></li>
-							<li><img src="images/slider/7.jpg" />
-								<h3 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"></h3></li>
-							<li><img src="images/slider/8.jpg" />
-								<h3 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"></h3></li>
-							<li><img src="images/slider/9.jpg" />
-								<h3 class="wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s"></h3></li>
-						</ul>
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="images/slider/1.jpg" /></div>
+							<div class="swiper-slide"><img src="images/slider/2.jpg" /></div>
+							<div class="swiper-slide"><img src="images/slider/3.jpg" /></div>
+							<div class="swiper-slide"><img src="images/slider/4.jpg" /></div>
+							<div class="swiper-slide"><img src="images/slider/5.jpg" /></div>
+							<div class="swiper-slide"><img src="images/slider/7.jpg" /></div>
+							<div class="swiper-slide"><img src="images/slider/8.jpg" /></div>
+							<div class="swiper-slide"><img src="images/slider/9.jpg" /></div>
+						</div>
 					</div>
-
+					<div class="a_btn clearfix">
+						<a href="javascript:subShowJoin();" class="more1 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1s">加入我们</a>
+						<a href="#" class="more2 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1s">查看视频</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</body>
-	<script src="js/index.js"></script>
+	<!--<script src="js/index.js"></script>-->
 	<script src="js/wow.js"></script>
-	<script src="js/unslider-min.js"></script>
-	<script src="js/jquery.event.move.js"></script>
-	<script src="js/jquery.event.swipe.js"></script>
+	<!--<script src="js/debug.js"></script>-->
 	<script>
 		$(function() {
-			$("#progressFirst").attr("style","opacity:0");
-			$('#progressSecond').attr("style","opacity:0");
+			
+			var $_w = $(top).width();
+			//alert($_w);
+			$(".swiper").width($_w+"px");
+			var myswiper = new Swiper('.swiper', {
+				pagination: '.span',
+				paginationClickable: true,
+				autoplay: 3000,
+				speed: 800,
+				loop: true
+			});
+
+			$("#progressFirst").attr("style", "opacity:0");
+			$('#progressSecond').attr("style", "opacity:0");
 			//show menu
 			$(".menu").on("click", function(e) {
 				$(".main-menu").addClass("active");
@@ -380,104 +434,94 @@
 			$(".what-we-do").on('mouseover', function(e) {
 				$(".footer .right,#rightWave").addClass("active");
 				$(".what-we-do .slide-line,.what-we-do .slide-line1").addClass("active");
-				$("#menuLayer .cases img").attr("src", "images/index/1_objects@2x_5.png");
+				$("#menuLayer .cases img").attr("src", "http://yun-image.elab-plus.com/images/index/1_objects@2x_5.png");
 			});
 			$(".what-we-do").on('mouseout', function(e) {
 				//setTimeout(function(){
 				$(".footer .right,#rightWave").removeClass("active");
 				$(".what-we-do .slide-line,.what-we-do .slide-line1").removeClass("active").addClass("fadeInUp");
-				$("#menuLayer .cases img").attr("src", "images/index/1_objects@2x_4.png");
+				$("#menuLayer .cases img").attr("src", "http://yun-image.elab-plus.com/images/index/1_objects@2x_4.png");
 				//},600);
 			});
-			var callback = function(){
+			var callback = function() {
 				isAInAnimation = false;
 				isAplusInAnimation = false;
 			};
 			var isAInAnimation = false;
-			//返回
-			$('.menu_btn').on('click', function(e) {
-				top.closeWho();
-			});
-			$('#A_invest_shun').on('mouseover' , function(e){
+
+			$('#A_invest_shun').on('mouseover', function(e) {
 
 				$("#progressSecondImg").removeClass('wph');
 				$("#progressSecondImg").addClass('shun');
-				$("#progressSecondImg").attr('src' , 'http://yun-image.elab-plus.com/images/Bitmap@2x.png');
+				$("#progressSecondImg").attr('src', 'http://yun-image.elab-plus.com/images/Bitmap@2x.png');
 				$("#progressSecondText").text('顺为资本由雷军和许达来先生联合创立，重点关注互联网，高科技行业以及互联网与传统行业结合所带来的变革。已主导投资了超百家创业公司。');
-                $("#progressSecondText").attr("style","width:80%;");
-                $('#progressSecond').fadeTo('normal' , 1 );
-				if(!isAInAnimation){
+				$("#progressSecondText").attr("style", "width:80%;");
+				$('#progressSecond').fadeTo('normal', 1);
+				if(!isAInAnimation) {
 					isAInAnimation = true;
-					$('#progressSecond').fadeTo('normal' , 1, callback);
+					$('#progressSecond').fadeTo('normal', 1, callback);
 				}
 			});
-			$('#A_invest_wph').on('mouseover' , function(e){
+			$('#A_invest_wph').on('mouseover', function(e) {
 
 				$("#progressSecondImg").removeClass('shun');
 				$("#progressSecondImg").addClass('wph');
-				$("#progressSecondImg").attr('src' , 'http://yun-image.elab-plus.com/images/Bitmap@2x9.png');
+				$("#progressSecondImg").attr('src', 'http://yun-image.elab-plus.com/images/Bitmap@2x9.png');
 				$("#progressSecondText").text('唯品会信息科技有限公司（VIPS）成立于2008年8月，2012年在美国纽约证券交易所（NYSE）上市。目前已成为中国第三大电商。');
-                $("#progressSecondText").attr("style","width:60%;");
-                $("#progressSecond").fadeTo('normal' , 1);
-				if(!isAInAnimation){
+				$("#progressSecondText").attr("style", "width:60%;");
+				$("#progressSecond").fadeTo('normal', 1);
+				if(!isAInAnimation) {
 					isAInAnimation = true;
-					$("#progressSecond").fadeTo('normal' , 1 , callback);
+					$("#progressSecond").fadeTo('normal', 1, callback);
 				}
 			});
-			$('#A_invest_shun').on('mouseout' , function(e){
+			$('#A_invest_shun').on('mouseout', function(e) {
 				if(!isAInAnimation)
-					$('#progressSecond').fadeTo('normal', 0 , callback);
+					$('#progressSecond').fadeTo('normal', 0, callback);
 			});
-			$('#A_invest_wph').on('mouseout' , function(e){
+			$('#A_invest_wph').on('mouseout', function(e) {
 				if(!isAInAnimation)
-					$('#progressSecond').fadeTo('normal', 0 , callback);
+					$('#progressSecond').fadeTo('normal', 0, callback);
 			});
 			var isAplusInAnimation = false;
-			$('#A_plus_invest_shun').on('mouseover' , function(e){
+			$('#A_plus_invest_shun').on('mouseover', function(e) {
 				$("#progressFirstImg").removeClass('wph');
 				$("#progressFirstImg").addClass('shun');
-				$("#progressFirstImg").attr('src' , 'http://yun-image.elab-plus.com/images/Bitmap@2x.png');
+				$("#progressFirstImg").attr('src', 'http://yun-image.elab-plus.com/images/Bitmap@2x.png');
 				$("#progressFirstText").text('顺为资本由雷军和许达来先生联合创立，重点关注互联网，高科技行业以及互联网与传统行业结合所带来的变革。已主导投资了超百家创业公司。');
-                $("#progressFirstText").attr("style","width:80%;");
-                $("#progressFirst").fadeTo('normal' , 1);
-				if(!isAplusInAnimation){
+				$("#progressFirstText").attr("style", "width:80%;");
+				$("#progressFirst").fadeTo('normal', 1);
+				if(!isAplusInAnimation) {
 					isAplusInAnimation = true;
-					$("#progressFirst").fadeTo('normal' , 1 , callback);
+					$("#progressFirst").fadeTo('normal', 1, callback);
 				}
 			});
-			$('#A_plus_invest_wph').on('mouseover' , function(e){
+			$('#A_plus_invest_wph').on('mouseover', function(e) {
 				$("#progressFirstImg").removeClass('shun');
 				$("#progressFirstImg").addClass('wph');
-				$("#progressFirstImg").attr('src' , 'http://yun-image.elab-plus.com/images/Bitmap@2x9.png');
+				$("#progressFirstImg").attr('src', 'http://yun-image.elab-plus.com/images/Bitmap@2x9.png');
 				$("#progressFirstText").text('唯品会信息科技有限公司（VIPS）成立于2008年8月，2012年在美国纽约证券交易所（NYSE）上市。目前已成为中国第三大电商。');
-                $("#progressFirstText").attr("style","width:60%");
-                $("#progressFirst").fadeTo('normal' , 1);
-				if(!isAplusInAnimation){
+				$("#progressFirstText").attr("style", "width:60%");
+				$("#progressFirst").fadeTo('normal', 1);
+				if(!isAplusInAnimation) {
 					isAplusInAnimation = true;
-					$("#progressFirst").fadeTo('normal' , 1, callback);
+					$("#progressFirst").fadeTo('normal', 1, callback);
 				}
 			});
-			$('#A_plus_invest_shun').on('mouseout' , function(e){
+			$('#A_plus_invest_shun').on('mouseout', function(e) {
 				if(!isAplusInAnimation)
-					$("#progressFirst").fadeTo('normal' , 0 , callback);
+					$("#progressFirst").fadeTo('normal', 0, callback);
 			});
-			$('#A_plus_invest_wph').on('mouseout' , function(e){
+			$('#A_plus_invest_wph').on('mouseout', function(e) {
 				if(!isAplusInAnimation)
-					$("#progressFirst").fadeTo('normal' , 0 , callback);
-			});
-
-			//加载完毕，开始slider
-			var mySlider = $('.slider').unslider({
-				infinite: true,
-				nav: false,
-				arrows: false,
-				autoplay: true,
-				delay: 4000,
-				speed: 800
-				//index: s //初始化显示哪个图片的索引
+					$("#progressFirst").fadeTo('normal', 0, callback);
 			});
 
 		});
+		
+		window.onload = function(){
+			
+		}
 
 		function startWow() {
 			//start wow
@@ -499,12 +543,12 @@
 			parent.showProjects();
 		}
 
-		function showTimeMore(){
+		function showTimeMore() {
 
 			var $_class = $(".hideTimeLine").attr('class');
-			if($_class.indexOf("show")>-1){
+			if($_class.indexOf("show") > -1) {
 				$("#btnShowTimeMore").text("查看更多");
-			}else{
+			} else {
 				$("#btnShowTimeMore").text("返 回");
 			}
 			$(".hideTimeLine").toggleClass("show").slideToggle(2000);
@@ -514,7 +558,7 @@
 		function linkToInner(url) {
 			$('html body').fadeOut(500);
 			setTimeout(function() {
-				self.location.href = url;
+				self.location.href = url + "?v=" + Math.random();
 			}, 500);
 		}
 	</script>

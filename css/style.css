@@ -95,7 +95,7 @@ body {
 	font-size: 0;
 	position: relative;
 	z-index: 10;
-	/*background: url(../images/menu-bg.jpg) no-repeat;
+	/*background: url(http://yun-image.elab-plus.com/images/menu-bg.jpg) no-repeat;
 	background-size: 100% 100%;
 	opacity: 0;*/
 }
@@ -155,7 +155,7 @@ body {
 	font-family: "Arial";
 	font-size: 40px;
 	cursor: pointer;
-	background: url(../images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
+	background: url(http://yun-image.elab-plus.com/images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
 	background-size: contain;
 	transition: all ease 1s;
 	transform: rotate(0);
@@ -373,19 +373,19 @@ body {
 	z-index: 10;
 }
 #leftWave {
-	/*background: #5aa8c2;url(../images/index/1_objects_7.png) repeat-y left top;
+	/*background: #5aa8c2;url(http://yun-image.elab-plus.com/images/index/1_objects_7.png) repeat-y left top;
 	background-size: 50% 100%;*/
 	background-image: linear-gradient(to right, #5aa8c2 80%, #fff 80%);
 	transform: translateX(-100%);
 }
 #leftWave .wave-bg-inner1{
-	background: url(../images/wave-top.png) no-repeat right top;
+	background: url(http://yun-image.elab-plus.com/images/wave-top.png) no-repeat right top;
 	background-size: 30% 100%;
 	-webkit-animation: move_wave 12s linear 0s infinite;
 	animation: move_wave 12s linear 0s infinite;
 }
 #leftWave .wave-bg-inner2{
-	background: url(../images/wave-mid.png) no-repeat right top;
+	background: url(http://yun-image.elab-plus.com/images/wave-mid.png) no-repeat right top;
 	background-size: 30% 100%;
 	-webkit-animation: move_wave 12s linear 3s infinite;
 	animation: move_wave 12s linear 3s infinite;
@@ -393,7 +393,7 @@ body {
 #rightWave {
 	left: auto;
 	right: 0;
-	/*background: url(../images/index/1_objects_6.png) repeat-y right top;
+	/*background: url(http://yun-image.elab-plus.com/images/index/1_objects_6.png) repeat-y right top;
 	background-size: 100% 100%;*/
 	background-image: linear-gradient(to left, #1b2030 80%, #fff 80%);
 	transform: translateX(100%);
@@ -409,13 +409,13 @@ body {
 	z-index: 5;
 }
 #rightWave .wave-bg-inner1{
-	background: url(../images/wave-top-1.png) no-repeat left top;
+	background: url(http://yun-image.elab-plus.com/images/wave-top-1.png) no-repeat left top;
 	background-size: 30% 100%;
 	-webkit-animation: move_wave 12s linear 0s infinite;
 	animation: move_wave 12s linear 0s infinite;
 }
 #rightWave .wave-bg-inner2{
-	background: url(../images/wave-mid-1.png) no-repeat left top;
+	background: url(http://yun-image.elab-plus.com/images/wave-mid-1.png) no-repeat left top;
 	background-size: 30% 100%;
 	-webkit-animation: move_wave 12s linear 3s infinite;
 	animation: move_wave 12s linear 3s infinite;
@@ -584,7 +584,7 @@ body {
 	background: #1b2030;
 	overflow-x: hidden;
 	overflow-y: auto;
-	position: absolute;
+	position: fixed;
 	left: 0;
 	top: 0;
 	z-index: 210;
@@ -708,7 +708,7 @@ body {
 
 #contact .small-slider {
 	display: block;
-	background: url(../images/contact/1_objects@2x_6.png) no-repeat top center;
+	background: url(http://yun-image.elab-plus.com/images/contact/1_objects@2x_6.png) no-repeat top center;
 	background-size: cover;
 }
 
@@ -875,7 +875,7 @@ body {
 
 .parts3 {
 	margin: 0 auto;
-	background: url(../images/join/1_objects@2x_7.png) no-repeat top center;
+	background: url(http://yun-image.elab-plus.com/images/join/1_objects@2x_7.png) no-repeat top center;
 	background-size: cover;
 	z-index: 4;
 }
@@ -898,7 +898,7 @@ body {
 
 .parts4 {
 	margin: 0 auto;
-	background: url(../images/join/1_objects@2x_2.png) no-repeat top center;
+	background: url(http://yun-image.elab-plus.com/images/join/1_objects@2x_2.png) no-repeat top center;
 	background-size: cover;
 	z-index: 4;
 }
@@ -951,7 +951,7 @@ body {
 	width: 100%;
 	height: 40px;
 	line-height: 40px;
-	background: url(../images/join/1_objects@2x_3.png) no-repeat 50% 50%;
+	background: url(http://yun-image.elab-plus.com/images/join/1_objects@2x_3.png) no-repeat 50% 50%;
 	background-size: contain;
 	cursor: pointer;
 }
@@ -1007,13 +1007,13 @@ body {
 	height: 18px;
 	float: right;
 	margin-top: 3.5%;
-	background: url(../images/join/2_objects@2x.png) no-repeat 50% 50%;
+	background: url(http://yun-image.elab-plus.com/images/join/2_objects@2x.png) no-repeat 50% 50%;
 	background-size: contain;
 	cursor: pointer;
 	transition: all ease 0.8s
 }
 .list-arrow.open{
-	background: url(../images/join/2_objects@2x_1.png) no-repeat 50% 50%;
+	background: url(http://yun-image.elab-plus.com/images/join/2_objects@2x_1.png) no-repeat 50% 50%;
 	background-size: contain;
 }
 .tab .detail{
@@ -1289,7 +1289,7 @@ body {
 }
 .project-item-inner .inner-icon{
 	width: 100%;
-	height: 900px;
+	height: -webkit-fill-available;
 	object-fit: cover;
 }
 .project-item-inner .close-bar{
@@ -1297,7 +1297,7 @@ body {
 	left: 0;
 	top: 1%;
 	z-index: 10;
-	background: url(../images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
+	background: url(http://yun-image.elab-plus.com/images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
 	background-size: contain;
     transition: all linear 0.5s;
 }
@@ -1340,7 +1340,7 @@ body {
 	left: 0;
 	top: 1%;
 	z-index: 20;
-	background: url(../images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
+	background: url(http://yun-image.elab-plus.com/images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
 	background-size: contain;
     transition: all linear 0.5s;
 }
@@ -1984,7 +1984,7 @@ body {
 #doDetail .project-item-detail .inner-icon{
 	height: auto;
 	/*max-height: 1024px;*/
-	height: 1024px;
+	height:-webkit-fill-available;
 }
 #doDetail .project-item-detail .item-title p{
 	letter-spacing: 6px;
@@ -2918,12 +2918,14 @@ body {
 
 /*****listLayer*****/
 .listLayer,
-.detailLayer{
+.detailLayer,
+.chuangLayer{
 	width: 100%;
 	height: 100%;
 	background: #1b2030;
 	overflow-x: hidden;
 	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -2933,8 +2935,12 @@ body {
 	line-height: 0;
     font-size: 0;
 }
+.chuangLayer{
+	z-index: 250;
+}
 .listLayer.in,
-.detailLayer.in{
+.detailLayer.in,
+.chuangLayer.in{
 	transform: translateX(0);
 }
 
@@ -3240,13 +3246,13 @@ body {
 	    object-position: 50%;
     }
     #parts4 .title{
-    	font-size: 24px;
+    	font-size: 22px;
     }
     #parts4 .desc{
     	width: 84%;
     	left: 8%;
     	text-align: justify;
-    	font-size: 24px;
+    	font-size: 20px;
     }
     #parts5 .words1{
     	width: 90%;
@@ -3309,5 +3315,13 @@ body {
     }
     #parts9 .inner-item .small-line{
     	height: 1px;
+    }
+    .project-item .item-title{
+    	font-size: 28px;
+    	letter-spacing: 0px;
+    }
+    .project-item-inner .item-title{
+    	font-size: 28px;
+    	letter-spacing: 0px;
     }
 }

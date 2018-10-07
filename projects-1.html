@@ -122,13 +122,13 @@
 				$(".what-we-do").on('mouseover', function(e) {
 					$(".footer .right,#rightWave").addClass("active");
 					$(".what-we-do .slide-line,.what-we-do .slide-line1").addClass("active");
-					$("#menuLayer .cases img").attr("src", "images/index/1_objects@2x_5.png");
+					$("#menuLayer .cases img").attr("src", "http://yun-image.elab-plus.com/images/index/1_objects@2x_5.png");
 				});
 				$(".what-we-do").on('mouseout', function(e) {
 					//setTimeout(function(){
 					$(".footer .right,#rightWave").removeClass("active");
 					$(".what-we-do .slide-line,.what-we-do .slide-line1").removeClass("active").addClass("fadeInUp");
-					$("#menuLayer .cases img").attr("src", "images/index/1_objects@2x_4.png");
+					$("#menuLayer .cases img").attr("src", "http://yun-image.elab-plus.com/images/index/1_objects@2x_4.png");
 					//},600);
 				});
 
@@ -150,7 +150,7 @@
 
 							var tmp = $_list[i];
 							if(tmp['id'] == parentid) { //当前分类数据
-								var $_img = (host+tmp['image2']) || 'images/projects/1_objects@2x_6.jpg';
+								var $_img = (host+tmp['image2']) || 'http://yun-image.elab-plus.com/images/projects/1_objects@2x_6.jpg';
 								$("#bigImage").attr("src", $_img); //大图
 								$(".item-desc").html("<span>" + tmp["textTitle"] + "</span>");
 								$(".item-title").html("" + tmp["textCn"] + "<p>" + tmp["textEn"] + "</p>");

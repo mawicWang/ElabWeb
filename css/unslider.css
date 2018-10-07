@@ -59,7 +59,7 @@
 	top: 33%;
 	z-index: 50;
 	cursor: pointer;
-	background: url(../images/img_19_1.png) no-repeat 0% 50%;
+	background: url(http://yun-image.elab-plus.com/images/img_19_1.png) no-repeat 0% 50%;
 	background-size: auto 50%;
 	font-size: 0;
 	width: 30px;
@@ -68,7 +68,7 @@
 .unslider-arrow.next {
 	left: auto;
 	right: 2%;
-	background: url(../images/img_19.png) no-repeat 100% 50%;
+	background: url(http://yun-image.elab-plus.com/images/img_19.png) no-repeat 100% 50%;
 	background-size: auto 50%;
 }
 .unslider nav {

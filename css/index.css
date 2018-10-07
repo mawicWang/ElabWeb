@@ -63,7 +63,7 @@ body {
 	width: 100%;
 	height: 40px;
 	line-height: 40px;
-	background: url(../images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
+	background: url(http://yun-image.elab-plus.com/images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
 	background-size: contain;
 	cursor: pointer;
 }
@@ -98,7 +98,7 @@ body {
 
 .csr {
 	height: 908px;
-	background: url(../images/Main@2x.png) center no-repeat;
+	background: url(http://yun-image.elab-plus.com/images/Main@2x.png) center no-repeat;
 	background-size: cover;
 	text-align: center;
 	padding: 393px 0 0;
@@ -176,7 +176,7 @@ body {
 }
 
 .section3 {
-	background: url(../images/bg01.png) center no-repeat;
+	background: url(http://yun-image.elab-plus.com/images/bg01.png) center no-repeat;
 	background-size: 100% 100%;
 	text-align: center;
 	padding: 58px 0 67px;
@@ -328,14 +328,17 @@ body {
 .section5 {
 	padding: 60px 0;
 	background: #1b2030;
+	position: relative;
+	overflow: hidden;
 }
 
 .hj_box {
 	padding: 415px 0 0;
-	background: url(../images/Group@2x02.png) center no-repeat;
+	background: url(http://yun-image.elab-plus.com/images/Group@2x02.png) center no-repeat;
 	background-size: cover;
 	text-align: center;
 	height: 906px;
+	overflow: hidden;
 }
 
 .hj_box h3 {
@@ -559,13 +562,13 @@ body {
 }
 
 .s_inner {
-	width: 1060px;
+	width: 92%;
 	margin: 0 auto;
 	font-family: "AritaHeiti";
 }
 
 .swiper-box h3 {
-	font-size: 1.6em;
+	font-size: 46px;
 	color: #fff;
 	text-align: center;
 	font-family: "AritaHeiti";
@@ -610,7 +613,7 @@ body {
 .container {
 	width: 100%;
 	margin: 0 auto;
-	background: url(../images/BG@2x.jpg) center no-repeat;
+	background: url(http://yun-image.elab-plus.com/images/BG@2x.jpg) center no-repeat;
 	background-size: cover;
 }
 
@@ -685,7 +688,7 @@ body {
 	}
 	.csr {
 		height: auto;
-		background: url(../images/Group@2x03.png) center no-repeat;
+		background: url(http://yun-image.elab-plus.com/images/Group@2x03.png) center no-repeat;
 		background-size: cover;
 		padding: 3.93rem 0 1rem;
 	}
@@ -711,7 +714,7 @@ body {
 		width: 50%;
 	}
 	.section3 {
-		background: url(../images/bg03.png) center no-repeat;
+		background: url(http://yun-image.elab-plus.com/images/bg03.png) center no-repeat;
 		background-size: 100% 100%;
 		padding: .87rem 0;
 	}
@@ -1041,18 +1044,21 @@ body {
 		left: .68rem;
 	}
 	.line {
-		width: .8rem;
+		width: .5rem;
 		height: .1rem;
 		top: 2.24rem;
 		left: .71rem;
 	}
 	.h33 {
-		font-size: 5vw;
+		font-size: 4.5vw;
 		top: 0.2rem;
-		right: 1%;
+		right: auto;
+		left: 50%;
 	}
 	.work {
 		top: 0.96rem;
+		right: auto;
+		left: 50%;
 	}
 	.n {
 		font-size: .7rem;
@@ -1089,7 +1095,7 @@ body {
 	line-height: 24px;
 	position: relative;
 	z-index: 10;
-	/*background: url(../images/menu-bg.jpg) no-repeat;
+	/*background: url(http://yun-image.elab-plus.com/images/menu-bg.jpg) no-repeat;
 	background-size: 100% 100%;
 	opacity: 0;*/
 }
@@ -1286,7 +1292,7 @@ body {
 	font-family: "Arial";
 	font-size: 40px;
 	cursor: pointer;
-	background: url(../images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
+	background: url(http://yun-image.elab-plus.com/images/projects/1_objects@2x_3.png) no-repeat 50% 50%;
 	background-size: contain;
 	transition: all ease 1s;
 	transform: rotate(0);
@@ -1330,6 +1336,21 @@ body {
 }
 
 .slider ul{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+/****inner slider***/
+.inslider{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+	z-index: 30;
+}
+
+.inslider ul{
 	width: 100%;
 	height: 100%;
 	overflow: hidden;

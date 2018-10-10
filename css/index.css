@@ -966,11 +966,13 @@ body {
 	.shuzi {
 		top: 20%;
 	}
-	.shuzi p:nth-child(2),
+	.shuzi p:nth-child(2){
+		display: inline-block;
+		width: 49%;
+	}
 	.shuzi p:nth-child(3) {
 		display: inline-block;
 		width: 49%;
-		vertical-align: top;
 	}
 }
 

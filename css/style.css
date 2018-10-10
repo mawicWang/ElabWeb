@@ -541,10 +541,15 @@ body {
 	}
 	.slider,
 	.unslider {
-		display: none;
+		/*display: none;*/
+	}
+	.slider-title {
+		top: 28%;
+		font-size: 5rem;
 	}
 	.small-slider {
-		display: block;
+		/*display: block;*/
+		display: none;
 	}
 	.who-we-are,
 	.what-we-do {

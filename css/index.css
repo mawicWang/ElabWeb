@@ -947,6 +947,9 @@ body {
     .shuzi .sp1:last-child {
         margin-right: 0;
     }
+	.shuzi p:nth-child(2) span{
+		margin-right: 0.35rem !important;
+	}
 	.con_t {
 		height: 11rem;
 	}
@@ -966,15 +969,41 @@ body {
 	}
 }
 
+@media only screen and (min-width: 1440px){
+	.shuzi strong#withPlus sup {
+		vertical-align: 0.7rem !important;
+		font-size: 0.5rem !important;
+	}
+	.shuzi p:nth-child(2) span{
+		margin-right: 0.55rem !important;
+	}
+}
+
+@media only screen and (min-width: 1920px){
+	.shuzi strong#withPlus sup {
+		vertical-align: 0.5rem !important;
+		font-size: 0.4rem !important;
+	}
+	.shuzi p:nth-child(2) span{
+		margin-right: 0.4rem !important;
+	}
+	.shuzi strong#withPlus {
+		margin-right: -0.18rem !important;
+	}
+}
+
+
 @media only screen and (min-width: 576px) {
 	.shuzi {
 		top: 20%;
 	}
 	.shuzi p:nth-child(2){
+		text-align: right;
 		display: inline-block;
 		width: 49%;
 	}
 	.shuzi p:nth-child(3) {
+		text-align: left;
 		display: inline-block;
 		width: 49%;
 	}

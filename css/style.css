@@ -2242,7 +2242,7 @@ body {
     #parts8 .words2 strong{
     	position: absolute;
     	left: 8%;
-        top: -10%;
+        top: 8%;
     	z-index: 5;
     	font-size: 36px;
     }

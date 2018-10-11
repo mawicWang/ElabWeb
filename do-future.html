@@ -44,8 +44,15 @@
 					margin-top: -5%;
 				}
 				#parts10 .words2 strong{
-					top: -58%;
+					top: -16%;
 					left: 16%;
+				}
+				@media only screen and (max-width: 576px) and (-webkit-min-device-pixel-ratio:2) {
+					html, body {
+						height: 100%;
+						overflow: auto;
+						-webkit-overflow-scrolling: touch;
+					}
 				}
 			}
 		</style>
@@ -159,7 +166,7 @@
 					mobile: true,
 					live: true
 				});
-				wow.init();
+//				wow.init();
 
 				//close-bar click
 				$('.close-bar').on('click', function(e) {

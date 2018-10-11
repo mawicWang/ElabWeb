@@ -659,14 +659,6 @@ body {
 	font-family: "DINCond";
 
 }
-.shuzi strong#withPlus {
-    margin-left: 0.63rem;
-    margin-right: -0.23rem;
-}
-.shuzi strong#withPlus sup {
-	vertical-align: 0.8rem;
-	font-size: 0.6rem;
-}
 
 .sp1 {
 	margin-right: 128px;
@@ -940,7 +932,7 @@ body {
 		font-size: 1.3rem;
 	}
 	.shuzi span {
-		font-size: .4rem;
+		font-size: .3rem;
 	}
 	.shuzi {
 		top: 2.3rem;
@@ -952,6 +944,9 @@ body {
 	.sp1 {
 		margin-right: 1.3rem;
 	}
+    .shuzi .sp1:last-child {
+        margin-right: 0;
+    }
 	.con_t {
 		height: 11rem;
 	}
@@ -983,6 +978,14 @@ body {
 		display: inline-block;
 		width: 49%;
 	}
+    .shuzi strong#withPlus {
+        margin-left: 0.63rem;
+        margin-right: -0.23rem;
+    }
+    .shuzi strong#withPlus sup {
+        vertical-align: 0.8rem;
+        font-size: 0.6rem;
+    }
 }
 
 /***pad**/

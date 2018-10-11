@@ -187,7 +187,7 @@ body {
 .yewu li h3 {
 	font-size: 120px;
 	color: #3dadc0;
-	font-family: "AritaHeiti";
+	font-family: "DINCond";
 }
 
 .yewu li p {
@@ -251,7 +251,7 @@ body {
 	font-size: 86px;
 	position: relative;
 	color: #41acc0;
-	font-family: "AritaHeiti";
+	font-family: "DINCond";
 	line-height: 80%;
 }
 
@@ -657,6 +657,15 @@ body {
 	font-size: 250px;
 	color: #fff;
 	font-family: "DINCond";
+
+}
+.shuzi strong#withPlus {
+    margin-left: 0.63rem;
+    margin-right: -0.23rem;
+}
+.shuzi strong#withPlus sup {
+	vertical-align: 0.8rem;
+	font-size: 0.6rem;
 }
 
 .sp1 {

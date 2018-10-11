@@ -39,6 +39,10 @@ a{text-decoration: none;}
 }
 @font-face {
 	font-family: "DINCond";
+	src: url('http://yun-image.elab-plus.com/font/DINCond-Bold.otf');
+}
+@font-face {
+	font-family: "DINCond-Light";
 	src: url('../fonts/DINCond-Light.otf');
 }
 /*

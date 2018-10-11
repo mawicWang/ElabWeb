@@ -1432,7 +1432,7 @@ body {
 	text-align: left;
 	font-size: 300px;
 	font-weight: 300;
-	font-family: 'DINCond';
+	font-family: 'DINCond-Light';
 	color: #fff;
 	position: relative;
 	vertical-align: top;
@@ -2034,7 +2034,7 @@ body {
 	font-weight: 700;
 	display: inline-block;
 	vertical-align: top;
-	font-family: 'DINCondensed';
+	font-family: 'DINCond';
 }
 #parts8 .words2{
 	font-size: 18px;
@@ -2135,7 +2135,7 @@ body {
 	font-weight: 700;
 	display: inline-block;
 	vertical-align: top;
-	font-family: 'DINCondensed';
+	font-family: 'DINCond';
 }
 #parts10 .words2{
 	font-size: 18px;
@@ -2489,7 +2489,7 @@ body {
 	top: 45%;
 	z-index: 10;
 	text-align: center;
-	font-size: 34px;
+	font-size: 33px;
 	font-weight: 700;
 	color: #fff;
 	letter-spacing: 1.2px;
@@ -2573,7 +2573,7 @@ body {
 	font-weight: 700;
 	display: inline-block;
 	vertical-align: top;
-	font-family: 'DINCondensed';
+	font-family: 'DINCond';
 }
 #parts14 .words2{
 	font-size: 18px;
@@ -2657,9 +2657,11 @@ body {
 
 /*****small*****/
 @media only screen and (max-width: 768px) and (orientation: portrait){
-	#parts15 .words1{
-	    font-size: 18px;
-    }
+	#parts15 .words1 {
+		font-size: 18px;
+		padding: 0 68px;
+		width: auto;
+	}
     #parts15 .words1 strong{
 	    font-size: 60px;
     }
@@ -2951,7 +2953,7 @@ body {
 
 @media only screen and (max-width: 1280px) {
 	.line1 .w-right{
-		padding-right: 30%;
+		padding-right: 28%;
 	}
 	.line1 .month{
 		padding-right: 75%;

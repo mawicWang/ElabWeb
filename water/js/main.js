@@ -94,7 +94,7 @@
           //renderer.view.style.maxWidth  = '100%';
           renderer.view.style.objectFit = 'cover';
           if(options.screenWidth>1440){
-          	renderer.view.style.width     = '135%';
+          	renderer.view.style.width     = '100%';
           }else{
           	renderer.view.style.width     = '100%';
           }

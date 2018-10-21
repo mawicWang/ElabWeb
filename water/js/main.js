@@ -18,6 +18,7 @@
       options.pixiSprites         = options.hasOwnProperty('sprites') ? options.sprites : [];
       options.centerSprites       = options.hasOwnProperty('centerSprites') ? options.centerSprites : false;
       options.texts               = options.hasOwnProperty('texts') ? options.texts : [];
+			options.origImages           = options.hasOwnProperty('origImages') ? options.origImages : {};
       options.autoPlay            = options.hasOwnProperty('autoPlay') ? options.autoPlay : true;
       options.autoPlaySpeed       = options.hasOwnProperty('autoPlaySpeed') ? options.autoPlaySpeed : [10, 3];
       options.fullScreen          = options.hasOwnProperty('fullScreen') ? options.fullScreen : false;
@@ -102,11 +103,12 @@
 		  // renderer.view.style.left      = '50%';
           //renderer.view.style.webkitTransform = 'translate(' + options.x + 'px' +  ' , ' + '-' + (options.screenHeight + options.y) + 'px' + ' )';
           //renderer.view.style.transform = 'translate(' + options.x + 'px' +  ' , ' + (-options.screenHeight + options.y) + 'px' + ' )';
-		  renderer.view.style.zIndex = 20;
-		  renderer.view.style.overflow = "hidden";
-		  renderer.view.className="wow fadeIn slideCanvas";
-		  renderer.view.setAttribute("data-wow-duration","2s");
-		  renderer.view.setAttribute("data-wow-delay","1s");
+				  renderer.view.style.zIndex = 20;
+				  renderer.view.style.overflow = "hidden";
+				  renderer.view.className="wow fadeIn slideCanvas";
+				  renderer.view.setAttribute("data-wow-duration","2s");
+				  renderer.view.setAttribute("data-wow-delay","1s");
+					renderer.backgroundColor = 0xFFFFFF;
         }
 
 
@@ -128,9 +130,8 @@
           displacementSprite.y = renderer.height / 2;
         }
 
-        displacementSprite.scale.x = 2;
-        displacementSprite.scale.y = 2;
-
+        displacementSprite.scale.x = 10;
+        displacementSprite.scale.y = 10;
         // PIXI tries to fit the filter bounding box to the renderer so we optionally bypass
         displacementFilter.autoFit = options.displaceAutoFit;
 
@@ -149,41 +150,49 @@
 
         var rSprites = options.sprites;
         var rTexts   = options.texts;
+				var origImages = options.origImages;
+				var scaleX;
+				var scaleY;
 
         for ( var i = 0; i < rSprites.length; i++ ) {
-          var texture   = new PIXI.Texture.fromImage( sprites[i] );
-          var image     = new PIXI.Sprite( texture );
 
-          console.log(texture);
+					var texture   = new PIXI.Texture.fromImage( sprites[i]);
+					var image     = new PIXI.Sprite( texture );
+					console.log(texture);
+					if ( options.centerSprites === true ) {
+						scaleX = renderer.width/origImages.get(sprites[i]).width;
+						scaleY = renderer.height/origImages.get(sprites[i]).height;
+						console.log(scaleX + "|" + scaleY);
+						image.scale.x = scaleX;
+						image.scale.y = scaleY;
+						image.width = renderer.width;
+						image.height = renderer.height;
+					}
 
-          if ( rTexts ) {
-            var richText = new PIXI.Text( rTexts[i], style);
-            image.addChild(richText);
+					// image.transform.scale.x = 1.3;
+					// image.transform.scale.y = 1.3;
+					if ( rTexts ) {
+						var richText = new PIXI.Text( rTexts[i], style);
 
-            //richText.anchor.set(0.5);
-            console.log("the i w: "+image.width);
-            richText.x = image.width;
-            richText.y = image.height;
-          }
-
-          if ( options.centerSprites === true ) {
-            image.anchor.set(0.5);
-            image.x = renderer.width / 2;
-            image.y = renderer.height / 2;
-          }
-          // image.transform.scale.x = 1.3;
-          // image.transform.scale.y = 1.3;
+						console.log("the i w: "+image.width);
+						console.log("the i h: "+image.height);
+						richText.anchor.set(0.5);
+						richText.x = renderer.width / 2 / scaleX;
+						richText.y = renderer.height/ 2 / scaleY;
+						image.addChild(richText);
+						// console.log(richText);
+						// console.log(style);
 
 
+					}
 
-          if ( i !== 0  ) {
-            TweenMax.set( image, { alpha: 0 } );
-          }
 
-          slidesContainer.addChild( image );
+					if ( i !== 0  ) {
+						TweenMax.set( image, { alpha: 0 } );
+					}
 
+					slidesContainer.addChild( image );
         }
-
       };
 
 

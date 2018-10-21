@@ -15,7 +15,7 @@
 			.page {
 				opacity: 0;
 			}
-			
+
 			.top-menu {
 				background: none;
 			}
@@ -167,6 +167,9 @@
 		<script src="js/jquery.event.move.js"></script>
 		<script src="js/jquery.event.swipe.js"></script>
 		<script src="js/wow.js"></script>
+		<script src="water/js/pixi.min.js"></script>
+		<script src="water/js/TweenMax.min.js"></script>
+		<script src="water/js/main.js"></script>
 		<!--<script src="js/debug.js"></script>-->
 
 		<script>
@@ -241,7 +244,7 @@
 				var percent, Count, Imgs;
 				var ImgLoaded = 0;
 				var spriteImagesSrc = [];
-
+				var texts = [];
 				var $_vw = $(window).width();
 //				if($_vw >= 768) {
 					$.get("http://106.14.225.13:8081/rest/listBanner", function(result) {
@@ -249,78 +252,136 @@
 						var $_list = result.result.list;
 						if($_list.length > 0) { //有返回数据列表
 							$(".slider ul").empty();
-
 							var host = "";
 
 							for(var i = 0; i < $_list.length; i++) { //生成unslide数据
 								var img = $_list[i];
 								spriteImagesSrc.push(host + img['image']);
-								var $_html = `<li>
-							<img class="slider-img animation" src="${host+img['image']}" />
-							<div class="slider-title">${img['name']}</div>
-							<div class="link-box">
-								<a href="javascript:showSliderLink('${img['url']}');" class="slider-links wow fadeIn" data-wow-duration="1s" data-wow-delay="4s">浏览作品</a>
-							</div>
-						    </li>`;
-								$(".slider ul").append($_html);
+							// 	var $_html = `<li>
+							// <img class="slider-img animation" src="${host+img['image']}" />
+							// <div class="slider-title">${img['name']}</div>
+							// <div class="link-box">
+							// 	<a href="javascript:showSliderLink('${img['url']}');" class="slider-links wow fadeIn" data-wow-duration="1s" data-wow-delay="4s">浏览作品</a>
+							// </div>
+						  //   </li>`;
+							// 	$(".slider ul").append($_html);
+							}
+							Count = $_list.length; //图片数量
+							Imgs = new Map();
+							for(var i = 0; i < $_list.length; i++){
+								Imgs.set(spriteImagesSrc[i], {width : 0, height:0});
+							}
+							for(var i = 0; i < $_list.length; i++){
+								var tmp = i;
+								var a = new Image();
+								a.src = spriteImagesSrc[i];
+								a.onload = function(res){
+									ImgLoaded++;
+									Imgs.set(res.path[0].getAttribute("src"), {width :res.path[0].width, height:res.path[0].height});
+									if(ImgLoaded == Count){
+										console.log(Imgs);
+										var initCanvasSlideshow = new CanvasSlideshow({
+											sprites: spriteImagesSrc,
+											displacementImage: 'water/img/dmaps/2048x2048/clouds.jpg',
+											autoPlay: true,
+											autoPlaySpeed: [10, 3],
+											displaceScale: [0, 0],
+											stageWidth : $('.slider ul').width,
+											stageHeight : $('.slider ul').height,
+											x : $('.slider ul').x,
+											y : $('.slider ul').y,
+											screenWidth : $('.page')[0].clientWidth,
+											screenHeight : $('.page')[0].clientHeight,
+											centerSprites : true,
+											wacky: false,
+											displacementCenter: true,
+											texts:texts,
+											origImages : Imgs
+										});
+										var index = 0;
+										setInterval(() => {
+											var newIndex = index + 1 >= spriteImagesSrc.length ? 0 : index + 1;
+											initCanvasSlideshow.moveSlider(newIndex);
+											index = newIndex;
+										}, 8000);
+									}
+								}
 							}
 
-							//Count = spriteImagesSrc.length; //图片数量 
-							//Imgs = new Array(Count);
-							//preLoadImgs();
+							// Imgs = new Array(Count);
+							// for(var i = 0 ; i < Imgs.length ; i++){
+							// 	Imgs[i] = new Image();
+							// 	Imgs[i].src = spriteImagesSrc[i];
+							// 	if(Imgs[i].complete){
+							// 	 // 打印
+							// 	 console.log('from:complete : width:'+img.width+',height:'+img.height);
+							// 		ImgLoaded++;
+							// 	}else{
+							// 	 // 加载完成执行
+							// 	 Imgs[i].onload = validateImages(i);
+							// 	}
+							// }
+							// if(ImgLoaded == Count){
+							// 	validateImages(0);
+							// }
 							//列表加载完毕，开始slider
-							var mySlider = $('.slider').unslider({
-								infinite: true,
-								nav: false,
-								arrows: false,
-								autoplay: true,
-								delay: 3000,
-								speed: 800
-								//index: s //初始化显示哪个礼品的索引
-							});
+							// var mySlider = $('.slider').unslider({
+							// 	infinite: true,
+							// 	nav: false,
+							// 	arrows: false,
+							// 	autoplay: true,
+							// 	delay: 3000,
+							// 	speed: 800
+							// 	//index: s //初始化显示哪个礼品的索引
+							// });
+
+
 						}
 					});
 //				}
-
-				//预加载图片 
-				function preLoadImgs() {
-					for(var i = 0; i < Imgs.length; i++) {
-						Imgs[i] = new Image();
-						downloadImage(i);
-					}
-				}
-				//加载单个图片 
-				function downloadImage(i) {
-					Imgs[i].src = spriteImagesSrc[i];
-					Imgs[i].onLoad = validateImages(i);
-				}
-				//验证是否成功加载完成，如不成功则重新加载 
-				function validateImages(i) {
-					if(!Imgs[i].complete) {
-						/*window.setTimeout(function(){
-							downloadImage(i);
-						}, 200);*/
-					} else if(typeof Imgs[i].naturalWidth != "undefined" && Imgs[i].naturalWidth == 0) {
-						/*window.setTimeout(function(){
-							downloadImage(i);
-						}, 200);*/
-					} else {
-						ImgLoaded++;
-						//console.log("the count is: " + Count);
-						if(ImgLoaded == Count) {
-							//加载完毕，开始slider
-							var mySlider = $('.slider').unslider({
-								infinite: true,
-								nav: false,
-								arrows: false,
-								autoplay: true,
-								delay: 3000,
-								speed: 800
-								//index: s //初始化显示哪个礼品的索引
-							});
-						}
-					}
-				}
+				//验证是否成功加载完成，如不成功则重新加载
+				// function validateImages(i) {
+				// 		ImgLoaded++;
+				// 		console.log(Imgs);
+				// 		//console.log("the count is: " + Count);
+				// 		if(ImgLoaded >= Count) {
+				// 			//加载完毕，开始slider
+				// 			// var mySlider = $('.slider').unslider({
+				// 			// 	infinite: true,
+				// 			// 	nav: false,
+				// 			// 	arrows: false,
+				// 			// 	autoplay: true,
+				// 			// 	delay: 3000,
+				// 			// 	speed: 800
+				// 			// 	//index: s //初始化显示哪个礼品的索引
+				// 			// });
+				// 			var initCanvasSlideshow = new CanvasSlideshow({
+				// 				sprites: spriteImagesSrc,
+				// 				displacementImage: 'water/img/dmaps/2048x2048/clouds.jpg',
+				// 				autoPlay: true,
+				// 				autoPlaySpeed: [10, 3],
+				// 				displaceScale: [100, 70],
+				// 				stageWidth : $('.slider ul').width,
+				// 				stageHeight : $('.slider ul').height,
+				// 				x : $('.slider ul').x,
+				// 				y : $('.slider ul').y,
+				// 				screenWidth : $('.page')[0].clientWidth,
+				// 				screenHeight : $('.page')[0].clientHeight,
+				// 				centerSprites : true,
+				// 				wacky: false,
+				// 				displacementCenter: true,
+				// 				texts:texts,
+				// 				origImages : Imgs
+				// 			});
+				// 			var index = 0;
+				// 			setInterval(() => {
+				// 				var newIndex = index + 1 >= spriteImagesSrc.length ? 0 : index + 1;
+				// 				initCanvasSlideshow.moveSlider(newIndex);
+				// 				index = newIndex;
+				// 			}, 8000);
+				// 		}
+				//
+				// }
 
 			});
 			//resize

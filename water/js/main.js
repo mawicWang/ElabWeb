@@ -178,7 +178,7 @@
 						console.log("the i h: "+image.height);
 						richText.anchor.set(0.5);
 						richText.x = renderer.width / 2 / scaleX;
-						richText.y = renderer.height/ 2 / scaleY;
+						richText.y = renderer.height *3/4  / scaleY;
 						image.addChild(richText);
 						// console.log(richText);
 						// console.log(style);

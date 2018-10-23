@@ -48,9 +48,9 @@
 				z-index: 20;
 			}
 
-			@media only screen and (max-width: 1024px) {
+			@media only screen and (max-width: 812px) and (-webkit-min-device-pixel-ratio:2) {
 				.swiperBox {
-					height: 484px;
+					height: 520px;
 				}
 			}
 		</style>
@@ -145,12 +145,15 @@
 	<script src="js/wow.js"></script>
 	<script src="js/swiper-3.4.2.min.js"></script>
 	<script>
+		
+		var $_w,myswiper;
+		
 		$(function() {
 
-			var $_w = $(top).width();
+			$_w = $(top).width();
 			$(".swiper").width($_w + "px");
 
-			var swiper = new Swiper('.swiper', {
+			myswiper = new Swiper('.swiper', {
 				pagination: '.span',
 				paginationClickable: false,
 				autoplay: 3000,
@@ -175,6 +178,21 @@
 				live: true
 			});
 			wow.init();
+		}
+		
+		window.onresize = function(){
+			$_w = $(top).width();
+			$(".swiper").width($_w + "px");
+            var sindex = myswiper.realIndex;
+            console.log("the chuangshiren slider sindex is: "+sindex);
+			myswiper = new Swiper('.swiper', {
+				initialSlide: sindex,
+				pagination: '.span',
+				paginationClickable: false,
+				autoplay: 3000,
+				speed: 800,
+				loop: true
+			});
 		}
 	</script>
 

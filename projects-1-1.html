@@ -44,7 +44,7 @@
 					<div class="item-desc item-inner wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.8s"><span>未来人居1号作品</span></div>
 					<div class="item-title item-inner wow fadeInLeft" data-wow-duration="1s" data-wow-delay="2.1s">重庆天空森林城市<p>Sky Forest City</p></div>
 					<div class="item-icon item-inner wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.8s"><img src="http://yun-image.elab-plus.com/images/projects/1_objects@2x_4.png" /></div>
-					<div class="item-link item-inner wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.8s"> <a href="#">查看视频</a> </div>
+					<div class="item-link item-inner wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.8s"> <a id='video_btn_sfc' href="javascript:;">查看视频</a> </div>
 				</div>
 				
 				<div id="parts2" class="project-item-detail">
@@ -76,7 +76,7 @@
 					<img class="part-icon wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.5s" src="http://yun-image.elab-plus.com/images/projects/1_objects@2x_9.png" />
 					<div class="title wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">中国十大未来人居 绿色未来金奖</div>
 					<div class="desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">唯一代表重庆入围设计周，获得来自全球4大洲、<br/>15个国家、100余名知名设计师的一致赞赏</div>
-					<div class="item-link item-inner wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s"><a href="javascript:parent.showIndex();parent.showSliderLink('chuangshiren.html');" class="parts-links">查看详情</a></div>
+					<div class="item-link item-inner wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s"><a id="video_btn_dw" href="javascript:;" class="parts-links">查看详情</a></div>
 				</div>
 				
 				<div id="parts5" class="project-item-detail">
@@ -88,7 +88,7 @@
 					<div class="words2 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
 						我们在线收集了大量C端的产品设计需求热度数据，并在2016年举办 全球新锐设计师大赛，众智众筹，向全球300多家知名设计单位和个人征集作品。大师评 审团最终评选出20家入围作品和8家优胜奖，这些作品成为了大量量的创新产品原型。
 					</div>
-					<div class="item-link item-inner wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s"><a href="#" class="parts-links">查看视频</a></div>
+					<div class="item-link item-inner wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s"><a id='video_btn_global' href="javascript:;" class="parts-links">查看视频</a></div>
 				</div>
 				
 				<div id="parts6" class="project-item-detail">
@@ -112,12 +112,23 @@
 						<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">扫码下载体验</p>
 					</div>
 				</div>
+			
+				<video id="video_sfc" style="display: none" controls preload="auto" width="400px" height="300px">
+					<source src="http://yun-image.elab-plus.com/video/天空森林城市详情页视频1.mp4" type="video/mp4">
+				</video>
+				<video id="video_dw" style="display: none" controls preload="auto" width="400px" height="300px">
+					<source src="http://yun-image.elab-plus.com/video/北京国际设计周.mp4" type="video/mp4">
+				</video>
+				<video id="video_global" style="display: none" controls preload="auto" width="400px" height="300px">
+					<source src="http://yun-image.elab-plus.com/video/2收集全球智慧.mp4" type="video/mp4">
+				</video>
 				
 			</div>
 
 		</div>
 
 		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/layer/layer.js"></script>
 		<script src="js/wow.js"></script>
 		<script>
 			$(function() {
@@ -126,6 +137,40 @@
 				$('.close-bar').on('click',function(e){
 				    parent.closeDetail();
 				});
+				$('#video_btn_sfc').on('click', function(){
+					layer.open({
+        				type: 1,
+        				title: false,
+						shade:0.6,
+        				closeBtn: 0,
+						area:['400px', '300px'],
+        				shadeClose: true,
+        				content: $('#video_sfc')
+      				});
+				});
+				$('#video_btn_dw').on('click', function(){
+					layer.open({
+        				type: 1,
+        				title: false,
+						shade:0.6,
+        				closeBtn: 0,
+						area:['400px', '300px'],
+        				shadeClose: true,
+        				content: $('#video_dw')
+      				});
+				});
+				$('#video_btn_global').on('click', function(){
+					layer.open({
+        				type: 1,
+        				title: false,
+						shade:0.6,
+        				closeBtn: 0,
+						area:['400px', '300px'],
+        				shadeClose: true,
+        				content: $('#video_global')
+      				});
+				});
+
 				
 				var wow = new WOW({
 					boxClass: 'wow',

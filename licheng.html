@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="css/animate.min.css"></link>
 		<link rel="stylesheet" href="css/swiper-3.4.2.min.css">
 		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/layer/layer.js"></script>
 		<script src="js/rem.js"></script>
 		<script src="js/swiper-3.4.2.min.js"></script>
 		<script>
@@ -213,10 +214,10 @@
 			<div class="section1 wow fadeIn" data-wow-duration="1s" data-wow-delay="2s">
 				<div class="wrap csr">
 					<h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="3s">探索·启程</h3>
-					<p class="csr_text wow fadeInUp" data-wow-duration="1s" data-wow-delay="3s">2015年创业之初,创始人蔡雪梅TED演讲</p>
+					<p class="csr_text wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">2015年创业之初,创始人蔡雪梅TED演讲</p>
 					<div class="a_btn clearfix">
-						<a href="#" class="s_v wow fadeInRight" data-wow-duration="1s" data-wow-delay="3s">查看视频</a>
-						<a href="javascript:parent.showChuang();" class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="3s">了解创始人</a>
+						<a id="video_btn_ted"href="javascript:;" class="s_v wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">查看视频</a>
+						<a href="javascript:parent.showChuang();" class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">了解创始人</a>
 					</div>
 				</div>
 			</div>
@@ -406,9 +407,16 @@
 						</div>
 					</div>
 					<div class="a_btn clearfix">
-						<a href="javascript:subShowJoin();" class="more1 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1s">加入我们</a>
-						<a href="#" class="more2 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="1s">查看视频</a>
+						<a href="javascript:subShowJoin();" class="more1 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">加入我们</a>
+						<a id="video_btn_join"href="javascript:;" class="more2 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">查看视频</a>
 					</div>
+					<video id="video_ted" style="display: none" controls preload="auto" width="400px" height="350px">
+							<source src="http://yun-image.elab-plus.com/video/Elab Final（蔡总创业TED演讲）.mp4" type="video/mp4">
+					</video>
+					<video id="video_join" style="display: none" controls preload="auto" width="400px" height="350px">
+							<source src="http://yun-image.elab-plus.com/video/加入我们-公司环境视频.mp4" type="video/mp4">
+					</video>
+
 				</div>
 			</div>
 		</div>
@@ -531,6 +539,32 @@
 			$('#A_plus_invest_wph').on('mouseout', function(e) {
 				if(!isAplusInAnimation)
 					$("#progressFirst").fadeTo('normal', 0, callback);
+			});
+			$('#video_btn_ted').on('click', function(){
+				layer.open({
+        			type: 1,
+        			title: false,
+					shade:0.6,
+        			closeBtn: 0,
+					area:['400px', '350px'],
+        			shadeClose: true,
+        			content: $('#video_ted')
+      			});
+
+
+			});
+			$('#video_btn_join').on('click', function(){
+				layer.open({
+        			type: 1,
+        			title: false,
+					shade:0.6,
+        			closeBtn: 0,
+					area:['400px', '350px'],
+        			shadeClose: true,
+        			content: $('#video_join')
+      			});
+
+
 			});
 
 		});

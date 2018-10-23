@@ -252,7 +252,7 @@ body {
 	position: absolute;
 	left: 0;
 	top: 43%;
-	font-size: 160px;
+	font-size: 60px;
 	font-weight: 300;
 	color: #fff;
 	z-index: 10;
@@ -504,6 +504,9 @@ body {
 	}
 	.index-body {
 		height: 88%;
+	}
+	.slider-title{
+		font-size: 30px;
 	}
 }
 

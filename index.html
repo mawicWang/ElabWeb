@@ -69,14 +69,15 @@
 			<div class="index-body wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
 				<div class="slider">
 					<ul></ul>
+					<div id="slider-title" class="slider-title wow fadeIn" data-wow-duration="1s" data-wow-delay="4s">测试字体位置</div>
 					<div class="link-box">
-					 	<a id="slider-links" class="slider-links wow fadeIn" data-wow-duration="1s" data-wow-delay="4s">浏览作品</a>
+					 	<a id="slider-links" class="slider-links wow fadeIn" data-wow-duration="1s" data-wow-delay="4s">了解详情</a>
 					</div>
 				</div>
 				<div class="small-slider">
 					<img class="slider-img wow fadeIn" data-wow-duration="2s" data-wow-delay="1s" src="http://yun-image.elab-plus.com/images/index/1_objects@2x.png" />
 					<div class="link-box">
-						<a href="javascript:showProjects();" class="slider-links wow fadeIn" data-wow-duration="1s" data-wow-delay="5.2s">浏览作品</a>
+						<a href="javascript:showProjects();" class="slider-links wow fadeIn" data-wow-duration="1s" data-wow-delay="5.2s">了解详情</a>
 					</div>
 				</div>
 			</div>
@@ -249,6 +250,7 @@
 				var spriteImagesSrc = [];
 				var texts = [];
 				var urls = [];
+				var tmpImgs = [];
 				var $_vw = $(window).width();
 //				if($_vw >= 768) {
 					$.get("http://106.14.225.13:8081/rest/listBanner", function(result) {
@@ -282,40 +284,9 @@
 							for(var i = 0; i < $_list.length; i++){
 								var tmp = i;
 								var a = new Image();
-								a.src = spriteImagesSrc[i];
-								a.onload = function(res){
-									ImgLoaded++;
-									Imgs.set(res.path[0].getAttribute("src"), {width :res.path[0].width, height:res.path[0].height});
-									if(ImgLoaded == Count){
-										console.log(Imgs);
-										var initCanvasSlideshow = new CanvasSlideshow({
-											sprites: spriteImagesSrc,
-											displacementImage: 'water/img/dmaps/2048x2048/clouds.jpg',
-											autoPlay: true,
-											autoPlaySpeed: [10, 3],
-											displaceScale: [0, 0],
-											stageWidth : $('.slider ul').width,
-											stageHeight : $('.slider ul').height,
-											x : $('.slider ul').x,
-											y : $('.slider ul').y,
-											screenWidth : $('.page')[0].clientWidth,
-											screenHeight : $('.page')[0].clientHeight,
-											centerSprites : true,
-											wacky: false,
-											displacementCenter: true,
-											texts:texts,
-											origImages : Imgs
-										});
-										var index = 0;
-										setInterval(() => {
-											var newIndex = index + 1 >= spriteImagesSrc.length ? 0 : index + 1;
-											initCanvasSlideshow.moveSlider(newIndex);
-											index = newIndex;
-											let href = "javascript:showSliderLink('" + urls[index] + "');";
-											$('#slider-links').attr('href', href);
-										}, 8000);
-									}
-								}
+								tmpImgs[tmp] = a;
+								tmpImgs[tmp].src = spriteImagesSrc[tmp];
+								tmpImgs[tmp].onload = onLoad(tmp);
 							}
 
 							// Imgs = new Array(Count);
@@ -348,6 +319,44 @@
 
 						}
 					});
+					function onLoad(i){
+						console.log("onLoad" + i);
+						ImgLoaded++;
+						console.log(tmpImgs[i].src + "|" + tmpImgs[i].width + tmpImgs[i].height);
+						// Imgs.set(tmpImgs[i].src, {width :tmpImgs[i].width, height:tmpImgs[i].height});
+						if(ImgLoaded == Count){
+							console.log(Imgs);
+							var initCanvasSlideshow = new CanvasSlideshow({
+								sprites: spriteImagesSrc,
+								displacementImage: 'water/img/dmaps/2048x2048/clouds.jpg',
+								autoPlay: true,
+								autoPlaySpeed: [10, 3],
+								displaceScale: [0, 0],
+								stageWidth : $('.slider ul').width,
+								stageHeight : $('.slider ul').height,
+								x : $('.slider ul').x,
+								y : $('.slider ul').y,
+								screenWidth : $('.page')[0].clientWidth,
+								screenHeight : $('.page')[0].clientHeight,
+								centerSprites : true,
+								wacky: false,
+								displacementCenter: true,
+								origImages : Imgs
+							});
+							var index = 0;
+							$('#slider-title').text("测试字体位置" + index);
+							setInterval(() => {
+								var newIndex = index + 1 >= spriteImagesSrc.length ? 0 : index + 1;
+								initCanvasSlideshow.moveSlider(newIndex , function(){});
+								index = newIndex;
+								setTimeout(() => {
+									$('#slider-title').text("测试字体位置" + index);
+									let href = "javascript:showSliderLink('" + urls[index] + "');";
+									$('#slider-links').attr('href', href);
+								},1000);
+							}, 8000);
+						}
+					}
 //				}
 				//验证是否成功加载完成，如不成功则重新加载
 				// function validateImages(i) {
@@ -468,6 +477,8 @@
 				});
 				wow.init();
 			}
+
+
 
 			/****页面操作区*****/
 			//返回首页统一处理函数

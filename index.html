@@ -264,6 +264,7 @@
 								var img = $_list[i];
 								spriteImagesSrc.push(host + img['image']);
 								urls.push(img['url']);
+								texts.push(img['name']);
 							// 	var $_html = `<li>
 							// <img class="slider-img animation" src="${host+img['image']}" />
 							// <div class="slider-title">${img['name']}</div>
@@ -344,13 +345,13 @@
 								origImages : Imgs
 							});
 							var index = 0;
-							$('#slider-title').text("测试字体位置" + index);
+							$('#slider-title').text(texts[index]);
 							setInterval(() => {
 								var newIndex = index + 1 >= spriteImagesSrc.length ? 0 : index + 1;
 								initCanvasSlideshow.moveSlider(newIndex , function(){});
 								index = newIndex;
 								setTimeout(() => {
-									$('#slider-title').text("测试字体位置" + index);
+									$('#slider-title').text(texts[index]);
 									let href = "javascript:showSliderLink('" + urls[index] + "');";
 									$('#slider-links').attr('href', href);
 								},1000);
